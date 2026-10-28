@@ -5,10 +5,20 @@
   var sourceText = new WeakMap();
   var sourceAttributes = new WeakMap();
   var watchedRoots = new WeakMap();
+  var sourceSampleValues = new WeakMap();
+  var sampleListenerRoots = new WeakSet();
   var selectedLanguage = "en";
   var languages = { en: "en", my: "ms-MY", cn: "zh-Hans" };
+  var productNames = ["Coral grouper", "Grouper", "Sea bass", "Red snapper", "Indian mackerel", "Fresh prawns", "Whole squid", "Flower crab"];
+  var businessSampleFields = {
+    "buyer-name": "Example Buyer",
+    "business-name": "Example Kitchen",
+    "seafood-interest": "Whole fish for shared mains",
+    "business-quantity": "20 kg per order",
+    "business-message": "Interested in confirmed species, preparation and delivery terms when available."
+  };
 
-  // Keys are the English copy in app.js and the static story page. Keep those sources unchanged; each render
+  // Keys are the English copy in app.js and the standalone pages. Keep those sources unchanged; each render
   // creates fresh nodes and this layer applies the selected language to the DOM.
   var copy = {
     "Skip to content": ["Langkau ke kandungan", "跳转至内容"],
@@ -42,7 +52,7 @@
     "Whole fish example": ["Contoh ikan seekor", "整鱼示例"],
     "Add to bag": ["Masukkan ke bakul", "加入购物袋"],
     "Coral grouper": ["Kerapu karang", "珊瑚石斑鱼"],
-    "Sea bass": ["Siakap", "海鲈鱼"],
+    "Sea bass": ["Siakap", "金目鲈"],
     "Red snapper": ["Ikan merah", "红鲷鱼"],
     "Firm & rich": ["Isi pejal & kaya rasa", "肉质紧实，味道浓郁"],
     "Mild & versatile": ["Rasa lembut & serba guna", "味道清淡，烹法多样"],
@@ -319,7 +329,216 @@
     "Tracking is a design preview. No carrier is connected, and this site cannot locate a real parcel.": ["Penjejakan ini ialah pratonton reka bentuk. Tiada syarikat penghantaran disambungkan dan laman ini tidak dapat menjejak bungkusan sebenar.", "追踪功能仅为设计预览。此网站未连接物流公司，无法查询真实包裹。"],
     "Sample profile details filled.": ["Butiran profil contoh diisi.", "已填入示例资料。"],
     "Preview profile removed from this browser.": ["Profil pratonton dipadam daripada pelayar ini.", "预览资料已从此浏览器移除。"],
-    "Preview profile created in this browser.": ["Profil pratonton dicipta dalam pelayar ini.", "预览资料已在此浏览器中创建。"]
+    "Preview profile created in this browser.": ["Profil pratonton dicipta dalam pelayar ini.", "预览资料已在此浏览器中创建。"],
+
+    // Standalone wholesale preview.
+    "Wholesale Seafood Enquiries for Peninsular Malaysia | Ikanza": ["Pertanyaan Borong Makanan Laut Semporna di Semenanjung Malaysia | Ikanza", "马来西亚半岛海鲜批发咨询 | Ikanza"],
+    "Ikanza is exploring a clearer connection between a Semporna seafood farming partner and restaurants, hotels and caterers in Peninsular Malaysia. Preview a wholesale enquiry; enquiries are not open yet.": ["Ikanza sedang meneroka hubungan yang lebih jelas antara rakan penternakan makanan laut di Semporna dengan restoran, hotel dan penyedia katering di Semenanjung Malaysia. Lihat pratonton pertanyaan borong; pertanyaan belum dibuka.", "Ikanza 正在探索如何让仙本那海鲜养殖伙伴与马来西亚半岛的餐厅、酒店及餐饮服务商建立更清晰的联系。欢迎预览批发咨询流程；目前尚未开放咨询。"],
+    "A future wholesale connection to Semporna seafood for Peninsular Malaysian kitchens. Preview the enquiry journey; enquiries are not open yet.": ["Hubungan borong makanan laut Semporna yang sedang dirancang untuk dapur di Semenanjung Malaysia. Lihat pratonton proses pertanyaan; pertanyaan belum dibuka.", "面向马来西亚半岛餐饮厨房的仙本那海鲜批发联系正在筹备中。欢迎预览咨询流程；目前尚未开放咨询。"],
+    "WHOLESALE ENQUIRY PREVIEW": ["PRATONTON PERTANYAAN BORONG", "批发咨询预览"],
+    "Wholesale": ["Borong", "批发"],
+    "For restaurants, hotels & caterers": ["Untuk restoran, hotel & penyedia katering", "面向餐厅、酒店及餐饮服务商"],
+    "A closer connection to Semporna seafood, built for your kitchen.": ["Hubungan lebih dekat dengan makanan laut Semporna, untuk dapur anda.", "让您的厨房更贴近仙本那海鲜。"],
+    "Ikanza is exploring a clearer way for food businesses in Peninsular Malaysia to connect with a seafood farming partner in Semporna. Tell us what matters to your menu when enquiries open. For now, you can preview the journey.": ["Ikanza sedang meneroka cara yang lebih jelas untuk perniagaan makanan di Semenanjung Malaysia berhubung dengan rakan penternakan makanan laut di Semporna. Apabila pertanyaan dibuka kelak, kongsikan keperluan menu anda. Buat masa ini, anda boleh melihat pratonton prosesnya.", "Ikanza 正在探索如何让马来西亚半岛的餐饮企业更清楚地与仙本那的海鲜养殖伙伴对接。咨询开放后，欢迎告诉我们您的菜单需求。目前可先预览流程。"],
+    "Preview a wholesale enquiry": ["Lihat pratonton pertanyaan borong", "预览批发咨询"],
+    "Read our story": ["Baca kisah kami", "阅读我们的故事"],
+    "Preview only. No business enquiry is sent from this page.": ["Pratonton sahaja. Tiada pertanyaan perniagaan dihantar melalui halaman ini.", "仅供预览。本页面不会发送商业咨询。"],
+    "From Semporna": ["Dari Semporna", "来自仙本那"],
+    "to more menus": ["ke lebih banyak menu", "走进更多菜单"],
+    "Illustrative imagery; farm products are being confirmed.": ["Imej hanya ilustrasi; produk ladang sedang disahkan.", "图片仅供示意；养殖场产品仍在确认中。"],
+    "A better sourcing conversation": ["Perbincangan perolehan yang lebih baik", "更有效的采购沟通"],
+    "Good decisions start with good details.": ["Keputusan yang baik bermula dengan maklumat yang jelas.", "好的决策始于清楚的细节。"],
+    "Every kitchen has its own needs. We are shaping a wholesale experience around the questions that matter before a buyer commits.": ["Setiap dapur mempunyai keperluan tersendiri. Kami sedang membentuk pengalaman borong berasaskan persoalan penting sebelum pembeli membuat komitmen.", "每个厨房都有自己的需求。我们正围绕买家作出决定前最关心的问题，设计批发体验。"],
+    "Your menu comes first": ["Menu anda diutamakan", "从您的菜单需求出发"],
+    "Tell us the fish, preparation, quantity and ordering rhythm your business would consider.": ["Kongsikan jenis ikan, cara penyediaan, kuantiti dan kekerapan pesanan yang perniagaan anda pertimbangkan.", "告诉我们您的企业会考虑哪些鱼种、处理方式、数量和订购频率。"],
+    "The facts on the table": ["Maklumat yang jelas untuk dinilai", "把关键信息摆在桌面上"],
+    "Confirmed species, condition, pack sizes, availability and prices should be clear before a decision.": ["Spesies, keadaan produk, saiz pek, ketersediaan dan harga yang disahkan perlu jelas sebelum membuat keputusan.", "作决定前，应清楚了解已确认的鱼种、产品状态、包装规格、供应情况和价格。"],
+    "A route that makes sense": ["Laluan penghantaran yang masuk akal", "合理的配送安排"],
+    "Coverage, handling, timing and support will be explained when the delivery arrangements are ready.": ["Liputan, pengendalian, masa penghantaran dan sokongan akan diterangkan apabila aturan penghantaran siap.", "配送安排确定后，我们会说明覆盖范围、处理方式、时间和支持服务。"],
+    "Wholesale enquiry preview": ["Pratonton pertanyaan borong", "批发咨询预览"],
+    "What could Ikanza bring to your menu?": ["Apa yang boleh Ikanza tawarkan untuk menu anda?", "Ikanza 未来能为您的菜单带来什么？"],
+    "Show us the shape of your kitchen’s needs. This preview demonstrates the future enquiry flow while the farm catalogue, supply, pricing and delivery route are being confirmed.": ["Kongsikan gambaran keperluan dapur anda. Pratonton ini menunjukkan proses pertanyaan yang dirancang sementara katalog ladang, bekalan, harga dan laluan penghantaran sedang disahkan.", "告诉我们您厨房需求的大致方向。养殖场商品目录、供应、价格和配送路线仍在确认中；此页面仅展示未来可能的咨询流程。"],
+    "Describe your needs.": ["Terangkan keperluan anda.", "描述您的需求。"],
+    "Choose the type of business, area, seafood interest and expected volume.": ["Pilih jenis perniagaan, kawasan, makanan laut yang diminati dan anggaran kuantiti.", "选择企业类型、所在地区、感兴趣的海鲜及预计采购量。"],
+    "See a sample confirmation.": ["Lihat pengesahan contoh.", "查看示例确认。"],
+    "The preview clears your entries immediately afterward.": ["Pratonton ini akan mengosongkan maklumat yang anda isi sejurus selepas itu.", "预览随后会立即清除您填写的内容。"],
+    "Connect later.": ["Hubungi kami kemudian.", "稍后再联系。"],
+    "A real contact route will be published when wholesale enquiries open.": ["Saluran hubungan sebenar akan diterbitkan apabila pertanyaan borong dibuka.", "批发咨询开放时，我们会公布正式的联系渠道。"],
+    "Current wholesale status": ["Status borong semasa", "当前批发业务状态"],
+    "Opening later": ["Akan dibuka kemudian", "稍后开放"],
+    "Where things stand": ["Keadaan semasa", "目前进展"],
+    "No wholesale catalogue, stock, prices or delivery schedule is confirmed yet. There is no way to send an enquiry through this preview.": ["Katalog borong, stok, harga dan jadual penghantaran belum disahkan. Pertanyaan tidak boleh dihantar melalui pratonton ini.", "批发商品目录、库存、价格和配送时间表均尚未确认。此预览无法发送咨询。"],
+    "Try the experience": ["Cuba pengalaman ini", "体验一下"],
+    "Your wholesale brief": ["Ringkasan keperluan borong anda", "您的批发需求简述"],
+    "Preview only:": ["Pratonton sahaja:", "仅供预览："],
+    "Nothing entered here is sent to Ikanza or saved by this page. Please use sample information.": ["Maklumat yang diisi di sini tidak dihantar kepada Ikanza atau disimpan oleh halaman ini. Sila gunakan maklumat contoh.", "您在此填写的内容不会发送给 Ikanza，也不会由此页面保存。请使用示例信息。"],
+    "Your name": ["Nama anda", "您的姓名"],
+    "Business name": ["Nama perniagaan", "企业名称"],
+    "Work email": ["E-mel kerja", "工作邮箱"],
+    "Business type": ["Jenis perniagaan", "企业类型"],
+    "Select a business type": ["Pilih jenis perniagaan", "选择企业类型"],
+    "Restaurant": ["Restoran", "餐厅"],
+    "Hotel": ["Hotel", "酒店"],
+    "Caterer": ["Penyedia katering", "餐饮承办商"],
+    "Other food business": ["Perniagaan makanan lain", "其他餐饮企业"],
+    "Operating area": ["Kawasan operasi", "经营地区"],
+    "City or area in Peninsular Malaysia": ["Bandar atau kawasan di Semenanjung Malaysia", "马来西亚半岛的城市或地区"],
+    "Seafood you are looking for": ["Makanan laut yang anda cari", "您希望采购的海鲜"],
+    "Species, format or dishes you have in mind": ["Spesies, bentuk produk atau hidangan yang anda fikirkan", "您考虑的鱼种、产品形式或菜肴"],
+    "Approximate quantity": ["Anggaran kuantiti", "预计数量"],
+    "e.g. 20 kg per order": ["cth. 20 kg setiap pesanan", "例如每单 20 公斤"],
+    "Expected frequency": ["Kekerapan yang dijangka", "预计订购频率"],
+    "Select a frequency": ["Pilih kekerapan", "选择频率"],
+    "Weekly": ["Setiap minggu", "每周"],
+    "Every two weeks": ["Setiap dua minggu", "每两周"],
+    "Monthly": ["Setiap bulan", "每月"],
+    "One event or occasion": ["Untuk satu acara atau majlis", "单次活动或场合"],
+    "Still exploring": ["Masih meninjau", "仍在了解"],
+    "Anything else we should know?": ["Ada perkara lain yang perlu kami tahu?", "还有什么希望我们了解？"],
+    "Optional": ["Pilihan", "选填"],
+    "Preparation, timing or questions for a future conversation": ["Penyediaan, masa atau soalan untuk perbincangan akan datang", "处理方式、时间安排或未来沟通时想问的问题"],
+    "* Required for the sample preview": ["* Wajib untuk pratonton contoh", "* 示例预览必填"],
+    "This button displays a local preview. It does not contact Ikanza.": ["Butang ini memaparkan pratonton pada peranti anda. Ia tidak menghubungi Ikanza.", "此按钮仅显示本地预览，不会联系 Ikanza。"],
+    "Your preview is complete.": ["Pratonton anda selesai.", "预览已完成。"],
+    "No enquiry was sent, no reply is expected, and the details you entered have been cleared from the form. When Ikanza opens wholesale enquiries, this is where you would receive a real confirmation and next steps.": ["Tiada pertanyaan dihantar dan tiada balasan akan diterima. Maklumat yang anda isi telah dikosongkan daripada borang. Apabila Ikanza membuka pertanyaan borong, di sinilah pengesahan sebenar dan langkah seterusnya akan dipaparkan.", "咨询未发送，因此不会收到回复；您填写的内容已从表单中清除。Ikanza 开放批发咨询后，正式确认和后续步骤将显示在这里。"],
+    "Try the preview again": ["Cuba pratonton sekali lagi", "再次体验预览"],
+    "Built around your kitchen": ["Dibina mengikut keperluan dapur anda", "围绕您的厨房需求打造"],
+    "A clearer connection begins here.": ["Hubungan yang lebih jelas bermula di sini.", "更清晰的合作，从这里开始。"],
+    "Explore the Ikanza story and the storefront preview while real wholesale details are being prepared.": ["Terokai kisah Ikanza dan pratonton kedai sementara butiran borong sebenar sedang disediakan.", "正式批发信息仍在准备中，欢迎先了解 Ikanza 的故事并浏览店铺预览。"],
+    "© Ikanza. Preview storefront; no orders or enquiries.": ["© Ikanza. Pratonton kedai; tiada pesanan atau pertanyaan diterima.", "© Ikanza。店铺预览；暂不接受订单或咨询。"],
+
+    // Values inserted by the page's sample-fill button.
+    "Example Buyer": ["Pembeli Contoh", "示例采购员"],
+    "Example Kitchen": ["Dapur Contoh", "示例厨房"],
+    "Whole fish for shared mains": ["Ikan seekor untuk hidangan utama berkongsi", "适合共享主菜的整鱼"],
+    "20 kg per order": ["20 kg setiap pesanan", "每单 20 公斤"],
+    "Interested in confirmed species, preparation and delivery terms when available.": ["Berminat untuk mengetahui spesies, cara penyediaan dan syarat penghantaran yang disahkan apabila tersedia.", "希望在信息确认后了解鱼种、处理方式及配送条款。"],
+
+    // Seven-product catalogue, sizes and search.
+    "Grouper": ["Kerapu", "石斑鱼"],
+    "Indian mackerel": ["Ikan kembung", "印度鲭鱼"],
+    "Fresh prawns": ["Udang segar", "鲜虾"],
+    "Whole squid": ["Sotong seekor", "整只鱿鱼"],
+    "Flower crab": ["Ketam bunga", "花蟹"],
+    "Ikan kerapu": ["Ikan kerapu", "Ikan kerapu（石斑鱼）"],
+    "Ikan kembung": ["Ikan kembung", "Ikan kembung（印度鲭鱼）"],
+    "Ikan merah": ["Ikan merah", "Ikan merah（红鱼）"],
+    "Siakap": ["Siakap", "Siakap（金目鲈）"],
+    "Udang": ["Udang", "Udang（虾）"],
+    "Sotong": ["Sotong", "Sotong（鱿鱼）"],
+    "Ketam bunga": ["Ketam bunga", "Ketam bunga（花蟹）"],
+    "Kerapu": ["Kerapu", "Kerapu（石斑鱼）"],
+    "Whole fish": ["Ikan seekor", "整鱼"],
+    "Whole prawns": ["Udang utuh", "整虾"],
+    "Whole crab": ["Ketam seekor", "整蟹"],
+    "Whole prawns example": ["Contoh udang utuh", "整虾示例"],
+    "Whole squid example": ["Contoh sotong seekor", "整只鱿鱼示例"],
+    "Whole crab example": ["Contoh ketam seekor", "整蟹示例"],
+    "Everyday favourite": ["Pilihan harian", "日常之选"],
+    "Sweet & versatile": ["Manis & serba guna", "鲜甜，做法多样"],
+    "Tender & savoury": ["Lembut & enak", "鲜嫩可口"],
+    "Sweet & delicate": ["Manis & halus", "鲜甜细腻"],
+    "A firm fish often enjoyed steamed with ginger or roasted.": ["Ikan berisi pejal yang sering dinikmati kukus bersama halia atau dipanggang.", "肉质紧实，常用姜清蒸或烤制。"],
+    "A mild fish suited to steaming, baking or pan-searing.": ["Ikan berasa lembut yang sesuai dikukus, dibakar atau digoreng dalam kuali.", "味道清淡，适合清蒸、烘烤或香煎。"],
+    "A clean flavour that works well in shared dishes.": ["Rasa segar yang sesuai untuk hidangan yang dinikmati bersama.", "味道清爽，适合与家人朋友分享。"],
+    "An everyday fish that is lovely fried, grilled or cooked in curry.": ["Ikan kegemaran harian yang enak digoreng, dibakar atau dimasak kari.", "家常鱼类，适合油炸、烧烤或煮咖喱。"],
+    "A versatile seafood favourite for stir-fries, noodles and grilling.": ["Makanan laut kegemaran yang serba guna untuk tumisan, mi dan panggangan.", "做法多样的海鲜佳选，适合快炒、配面或烧烤。"],
+    "A versatile option for quick cooking, grilling or sambal.": ["Pilihan serba guna untuk masakan ringkas, panggangan atau sambal.", "适合快炒、烧烤或做叁巴酱料理。"],
+    "A seafood favourite for curry, steaming and shared meals.": ["Makanan laut kegemaran untuk kari, kukus dan hidangan bersama.", "适合做咖喱、清蒸，也适合多人共享。"],
+    "All seafood": ["Semua makanan laut", "全部海鲜"],
+    "Premium fish": ["Ikan premium", "优质鱼类"],
+    "Everyday fish": ["Ikan harian", "日常鱼类"],
+    "Prawns": ["Udang", "虾类"],
+    "Squid": ["Sotong", "鱿鱼"],
+    "Crab": ["Ketam", "螃蟹"],
+    "Small": ["Kecil", "小"],
+    "Medium": ["Sederhana", "中"],
+    "Large": ["Besar", "大"],
+    "Small pack": ["Pek kecil", "小包装"],
+    "Medium pack": ["Pek sederhana", "中包装"],
+    "Large pack": ["Pek besar", "大包装"],
+    "500 g pack": ["Pek 500 g", "500 克装"],
+    "1 kg pack": ["Pek 1 kg", "1 公斤装"],
+    "400–600 g": ["400–600 g", "400–600 克"],
+    "600–800 g": ["600–800 g", "600–800 克"],
+    "700–900 g": ["700–900 g", "700–900 克"],
+    "900 g–1.1 kg": ["900 g–1.1 kg", "900 克–1.1 公斤"],
+    "1.1–1.3 kg": ["1.1–1.3 kg", "1.1–1.3 公斤"],
+    "1.3–1.5 kg": ["1.3–1.5 kg", "1.3–1.5 公斤"],
+    "1.4–1.6 kg": ["1.4–1.6 kg", "1.4–1.6 公斤"],
+    "500 g": ["500 g", "500 克"],
+    "1 kg": ["1 kg", "1 公斤"],
+    "Example market prices.": ["Harga pasaran contoh.", "市场参考价格。"],
+    "Example market prices, checked 29 October 2026.": ["Harga pasaran contoh, disemak pada 29 Oktober 2026.", "市场参考价格，查阅日期：2026 年 10 月 29 日。"],
+    "References:": ["Rujukan:", "参考来源："],
+    "PasarHub fish": ["ikan di PasarHub", "PasarHub 鱼类"],
+    "seafood": ["makanan laut", "海鲜"],
+    "AEON siakap": ["siakap di AEON", "AEON 金目鲈"],
+    "ShopFrosty grouper": ["kerapu di ShopFrosty", "ShopFrosty 石斑鱼"],
+    "red snapper": ["ikan merah", "红鲷鱼"],
+    ", and": [", dan", "，以及"],
+    ". Pack sizes and several prices are estimates for this preview; species, cuts, condition, farm stock and Ikanza prices are unconfirmed.": [". Saiz pek dan beberapa harga adalah anggaran untuk pratonton ini; spesies, potongan, keadaan produk, stok ladang dan harga Ikanza belum disahkan.", "。此预览的包装规格和部分价格为估算；鱼种、切割方式、产品状态、养殖场库存及 Ikanza 价格尚未确认。"],
+    "Based on public": ["Berdasarkan senarai awam daripada", "参考公开的"],
+    "and": ["dan", "和"],
+    "listings checked 29 October 2026. Pack options are demo estimates; farm stock and Ikanza prices are unconfirmed.": ["yang disemak pada 29 Oktober 2026. Pilihan pek ialah anggaran demo; stok ladang dan harga Ikanza belum disahkan.", "商品信息（查阅日期：2026 年 10 月 29 日）。包装选项为演示估算；养殖场库存和 Ikanza 价格尚未确认。"],
+    "Example offers": ["Tawaran contoh", "优惠示例"],
+    "Free delivery from RM250 in Klang Valley or RM400 elsewhere in Peninsular Malaysia": ["Penghantaran percuma bermula daripada RM250 di Lembah Klang atau RM400 di kawasan lain Semenanjung Malaysia", "巴生谷商品满 RM250，或马来西亚半岛其他地区满 RM400，即可享示例免运费"],
+    "Spend RM500 on items for an extra 5% off (up to RM50).": ["Belanja RM500 untuk produk dan dapatkan diskaun tambahan 5% (maksimum RM50).", "商品消费满 RM500，可额外享 5% 示例折扣（最高 RM50）。"],
+    "Preview math only. Real delivery costs and offers depend on the Semporna cold chain and are not available yet.": ["Pengiraan ini hanya untuk pratonton. Kos penghantaran dan tawaran sebenar bergantung pada rantaian sejuk dari Semporna dan belum tersedia.", "仅为预览计算。实际配送费用和优惠取决于仙本那的冷链安排，目前尚未确定。"],
+    "Example free delivery unlocked": ["Penghantaran percuma contoh tersedia", "已达到示例免运费门槛"],
+    "Extra 5% example discount unlocked": ["Diskaun tambahan 5% contoh tersedia", "已达到额外 5% 示例折扣门槛"],
+    "See all 7 example items": ["Lihat semua 7 produk contoh", "查看全部 7 件示例商品"],
+    "For business": ["Untuk perniagaan", "企业采购"],
+    "For restaurants & hotels": ["Untuk restoran & hotel", "面向餐厅与酒店"],
+    "Restaurants, hotels & caterers": ["Restoran, hotel & penyedia katering", "餐厅、酒店及餐饮服务商"],
+    "Looking for a steadier seafood conversation?": ["Mahukan perbincangan bekalan makanan laut yang lebih jelas?", "希望更踏实地洽谈海鲜供应？"],
+    "Tell us the species, volume and delivery area you need. Explore how a direct Semporna supply enquiry could work.": ["Kongsikan spesies, kuantiti dan kawasan penghantaran yang anda perlukan. Terokai cara pertanyaan bekalan terus dari Semporna mungkin berfungsi.", "告诉我们您需要的鱼种、数量和配送区域，了解未来如何咨询仙本那直供海鲜。"],
+    "Preview how a Semporna seafood enquiry for your kitchen could work, including species, volume and delivery area.": ["Lihat pratonton cara pertanyaan makanan laut Semporna untuk dapur anda mungkin berfungsi, termasuk spesies, kuantiti dan kawasan penghantaran.", "预览面向您厨房的仙本那海鲜咨询流程，包括鱼种、采购量和配送区域。"],
+    "Explore business enquiries": ["Terokai pertanyaan perniagaan", "了解企业采购咨询"],
+    "Find seafood by name, local name or category": ["Cari makanan laut mengikut nama, nama tempatan atau kategori", "按名称、当地名称或类别搜索海鲜"],
+    "What seafood are you craving?": ["Makanan laut apa yang anda inginkan?", "想吃什么海鲜？"],
+    "Clear": ["Kosongkan", "清除"],
+    "Try a name:": ["Cuba nama ini:", "试试这些名称："],
+    "Filter seafood by category": ["Tapis makanan laut mengikut kategori", "按类别筛选海鲜"],
+    "Nothing matching that yet.": ["Belum ada yang sepadan.", "暂时没有匹配的商品。"],
+    "Try a different name or browse a category.": ["Cuba nama lain atau lihat mengikut kategori.", "请尝试其他名称或浏览类别。"],
+    "Try another spelling, a Malay or English name, or browse a category.": ["Cuba ejaan lain, nama Melayu atau Inggeris, atau lihat mengikut kategori.", "请尝试其他拼写、马来文或英文名称，或浏览类别。"],
+    "Ikan bilis is usually sold dried and is not in this fresh seafood preview. Try a fresh fish category or see all seafood.": ["Ikan bilis biasanya dijual kering dan tiada dalam pratonton makanan laut segar ini. Cuba kategori ikan segar atau lihat semua makanan laut.", "江鱼仔通常以干货形式出售，因此不在此鲜海鲜预览中。请选择鲜鱼类别或查看全部海鲜。"],
+    "See all seafood": ["Lihat semua makanan laut", "查看全部海鲜"],
+    "That seafood is not in this preview.": ["Makanan laut itu tiada dalam pratonton ini.", "此预览中没有该海鲜。"],
+    "Return to the sample collection.": ["Kembali ke koleksi contoh.", "返回示例商品系列。"],
+    "Example item": ["Produk contoh", "示例商品"],
+    "Example from": ["Harga contoh bermula", "示例价起"],
+    "Choose size": ["Pilih saiz", "选择规格"],
+    "Not for sale yet": ["Belum dijual", "尚未开售"],
+    "Choose a sample size or pack weight": ["Pilih saiz atau berat pek contoh", "选择示例尺寸或包装重量"],
+    "Size names include a gram range, so you can compare what the example pack means.": ["Nama saiz disertakan julat gram supaya anda boleh membandingkan maksud setiap pek contoh.", "每种规格都标明重量范围，方便比较示例包装的实际含义。"],
+    "Selected example pack": ["Pek contoh yang dipilih", "已选示例包装"],
+    "Format": ["Bentuk produk", "产品形式"],
+    "Farm source": ["Sumber ladang", "养殖场来源"],
+    "To be confirmed": ["Akan disahkan", "待确认"],
+    "Add example to bag": ["Masukkan produk contoh ke bakul", "将示例商品加入购物袋"],
+    "Example product, size and market-based price. The farm catalogue, preparation, condition and availability are still unconfirmed. No order or payment is available.": ["Produk, saiz dan harga berasaskan pasaran ini hanyalah contoh. Katalog ladang, cara penyediaan, keadaan dan ketersediaan masih belum disahkan. Pesanan dan pembayaran belum tersedia.", "商品、规格及参考市场价仅为示例。养殖场目录、处理方式、产品状态和供应情况尚未确认，目前无法下单或付款。"],
+    "What if the fish weighs differently?": ["Bagaimana jika berat ikan berbeza?", "如果鱼的重量不同怎么办？"],
+    "The gram ranges and prices here are illustrations. Confirmed listings will explain weighing and final pricing before any real checkout opens.": ["Julat gram dan harga di sini hanyalah ilustrasi. Senarai produk yang disahkan akan menerangkan cara penimbangan dan harga akhir sebelum semakan pesanan sebenar dibuka.", "此处的重量范围和价格仅供示意。正式开放结账前，已确认的商品页面会说明称重和最终定价方式。"],
+    "Is this from the Semporna farm?": ["Adakah ini dari ladang di Semporna?", "这来自仙本那的养殖场吗？"],
+    "The farm has not supplied its final product list or photos. This preview shows possible categories, not confirmed farm stock.": ["Ladang belum memberikan senarai produk akhir atau foto. Pratonton ini menunjukkan kategori yang mungkin ditawarkan, bukan stok ladang yang disahkan.", "养殖场尚未提供最终商品清单或照片。此预览展示的是可能的类别，并非已确认的库存。"],
+    "Review the example items, delivery area and full preview total before continuing.": ["Semak produk contoh, kawasan penghantaran dan jumlah penuh pratonton sebelum meneruskan.", "继续前，请核对示例商品、配送区域和预览总额。"],
+    "Example delivery area": ["Kawasan penghantaran contoh", "示例配送区域"],
+    "Example discount": ["Diskaun contoh", "示例折扣"],
+    "Example delivery": ["Penghantaran contoh", "示例配送费"],
+    "Example total": ["Jumlah contoh", "示例总额"],
+    "Example items": ["Produk contoh", "示例商品"],
+    "Example RM30 delivery; free from RM250 item subtotal": ["Penghantaran contoh RM30; percuma apabila jumlah kecil produk mencapai RM250", "示例配送费 RM30；商品小计满 RM250 免运费"],
+    "Example RM60 delivery; free from RM400 item subtotal": ["Penghantaran contoh RM60; percuma apabila jumlah kecil produk mencapai RM400", "示例配送费 RM60；商品小计满 RM400 免运费"],
+    "These offers are examples only. Orders and payments are not open.": ["Tawaran ini hanyalah contoh. Pesanan dan pembayaran belum dibuka.", "这些优惠仅为示例，目前尚未开放下单或付款。"],
+    "All amounts and offers are illustrative. No payment is taken.": ["Semua jumlah dan tawaran hanyalah ilustrasi. Tiada pembayaran diambil.", "所有金额和优惠仅供示意，不会收取费用。"],
+    "The reference is generated in your browser only. No real offer was applied.": ["Nombor rujukan hanya dijana dalam pelayar anda. Tiada tawaran sebenar digunakan.", "此编号仅在您的浏览器中生成，没有应用任何真实优惠。"],
+    "Your shopping journey": ["Perjalanan membeli-belah anda", "您的购物流程"],
+    "Three clear decisions, with the useful details right where you need them.": ["Tiga keputusan yang jelas, dengan maklumat berguna tersedia apabila anda memerlukannya.", "三个清晰的步骤，在需要时就能看到实用信息。"],
+    "Compare familiar names, sample size ranges in grams, and the price for each pack.": ["Bandingkan nama yang biasa dikenali, julat saiz contoh dalam gram dan harga setiap pek.", "比较熟悉的名称、以克为单位的示例重量范围及每包价格。"],
+    "Choose an area and date, then see the example delivery charge and any example offer.": ["Pilih kawasan dan tarikh, kemudian lihat caj penghantaran serta tawaran contoh yang berkenaan.", "选择配送区域和日期，再查看示例配送费及适用的示例优惠。"],
+    "Review your items and complete sample total before seeing the preview confirmation.": ["Semak produk dan jumlah contoh keseluruhan sebelum melihat pengesahan pratonton.", "查看商品和完整示例总额，再进入预览确认页面。"]
   };
 
   var pageMetadata = {
@@ -379,12 +598,27 @@
 
     var m = text.match(/^Approx\. (.+) \/ kg$/);
     if (m) return lead + (lang === "my" ? "Anggaran " + m[1] + " / kg" : "约 " + m[1] + " / 公斤") + trail;
+    m = text.match(/^From approx\. (.+) \/ kg$/);
+    if (m) return lead + (lang === "my" ? "Daripada anggaran " + m[1] + " / kg" : "约 " + m[1] + " / 公斤起") + trail;
     m = text.match(/^Sample price for (.+) · approx\. (.+) \/ kg$/);
     if (m) return lead + (lang === "my" ? "Harga contoh untuk " + (literal(m[1], lang) || m[1]) + " · anggaran " + m[2] + " / kg" : (literal(m[1], lang) || m[1]) + "的参考价 · 约 " + m[2] + " / 公斤") + trail;
+    m = text.match(/^Example price for (.+) · approx\. (.+) \/ kg at midpoint weight$/);
+    if (m) return lead + (lang === "my" ? "Harga contoh untuk " + (literal(m[1], lang) || m[1]) + " · anggaran " + m[2] + " / kg pada berat pertengahan" : (literal(m[1], lang) || m[1]) + "的示例价格 · 按重量区间中值计算约 " + m[2] + " / 公斤") + trail;
     m = text.match(/^(\d+) preview listings?$/);
     if (m) return lead + (lang === "my" ? m[1] + " senarai contoh" : m[1] + " 件预览商品") + trail;
+    m = text.match(/^(\d+) example items?$/);
+    if (m) return lead + (lang === "my" ? m[1] + " produk contoh" : m[1] + " 件示例商品") + trail;
     m = text.match(/^(\d+) preview items?$/);
     if (m) return lead + (lang === "my" ? m[1] + " produk pratonton" : m[1] + " 件预览商品") + trail;
+    m = text.match(/^(.+) away from example free delivery$/);
+    if (m) return lead + (lang === "my" ? "Lagi " + m[1] + " untuk penghantaran percuma contoh" : "再消费 " + m[1] + " 即达示例免运费门槛") + trail;
+    m = text.match(/^(.+) away from the extra 5% example discount$/);
+    if (m) return lead + (lang === "my" ? "Lagi " + m[1] + " untuk diskaun tambahan 5% contoh" : "再消费 " + m[1] + " 即达额外 5% 示例折扣门槛") + trail;
+    m = text.match(/^Based on item subtotal and (Klang Valley|other Peninsular area) example delivery\.$/);
+    if (m) {
+      var place = literal(m[1] === "other Peninsular area" ? "Other Peninsular area" : m[1], lang) || m[1];
+      return lead + (lang === "my" ? "Berdasarkan jumlah kecil produk dan contoh penghantaran untuk " + place + "." : "根据商品小计和" + place + "的示例配送费计算。") + trail;
+    }
     m = text.match(/^View bag, (\d+) items?$/);
     if (m) return lead + (lang === "my" ? "Lihat bakul, " + m[1] + " produk" : "查看购物袋，" + m[1] + " 件商品") + trail;
     m = text.match(/^Welcome, (.+)\.$/);
@@ -393,29 +627,68 @@
     if (m) return lead + (lang === "my" ? "Destinasi: " : "配送地点：") + (literal(m[1], lang) || m[1]) + trail;
     m = text.match(/^Quantity (\d+)$/);
     if (m) return lead + (lang === "my" ? "Kuantiti " + m[1] : "数量 " + m[1]) + trail;
+    m = text.match(/^(Remove|Add) one (.+) (Small pack|Medium pack|Large pack|Small|Medium|Large|500 g pack|1 kg pack)$/);
+    if (m && productNames.indexOf(m[2]) >= 0) return lead + (lang === "my" ? (m[1] === "Remove" ? "Buang satu " : "Tambah satu ") + literal(m[2], lang) + " (" + literal(m[3], lang) + ")" : (m[1] === "Remove" ? "移除一份" : "添加一份") + literal(m[2], lang) + "（" + literal(m[3], lang) + "）") + trail;
     m = text.match(/^(Remove|Add) one (.+)$/);
     if (m) return lead + (lang === "my" ? (m[1] === "Remove" ? "Buang satu " : "Tambah satu ") + (literal(m[2], lang) || m[2]) : (m[1] === "Remove" ? "移除一件" : "添加一件") + (literal(m[2], lang) || m[2])) + trail;
-    m = text.match(/^View (Coral grouper|Sea bass|Red snapper)$/);
-    if (m) return lead + (lang === "my" ? "Lihat " : "查看") + literal(m[1], lang) + trail;
+    m = text.match(/^View (.+)$/);
+    if (m && productNames.indexOf(m[1]) >= 0) return lead + (lang === "my" ? "Lihat " : "查看") + literal(m[1], lang) + trail;
     m = text.match(/^Illustrative image of whole (coral grouper|sea bass|red snapper)$/i);
     if (m) return lead + (lang === "my" ? "Imej ilustrasi ikan seekor " + (literal(titleCaseFish(m[1]), lang) || m[1]) : "整条" + (literal(titleCaseFish(m[1]), lang) || m[1]) + "的示意图片") + trail;
     m = text.match(/^Illustrative (coral grouper|sea bass|red snapper)$/i);
     if (m) return lead + (lang === "my" ? "Ilustrasi " + (literal(titleCaseFish(m[1]), lang) || m[1]) : (literal(titleCaseFish(m[1]), lang) || m[1]) + "示意图片") + trail;
+    m = text.match(/^Illustrative image of (.+)$/i);
+    if (m && productNames.indexOf(titleCaseFish(m[1])) >= 0) return lead + (lang === "my" ? "Imej ilustrasi " + literal(titleCaseFish(m[1]), lang) : literal(titleCaseFish(m[1]), lang) + "的示意图片") + trail;
+    m = text.match(/^Illustrative (.+)$/i);
+    if (m && productNames.indexOf(titleCaseFish(m[1])) >= 0) return lead + (lang === "my" ? "Ilustrasi " + literal(titleCaseFish(m[1]), lang) : literal(titleCaseFish(m[1]), lang) + "示意图片") + trail;
     m = text.match(/^Illustrative delivery: (RM[\d,.]+)$/);
     if (m) return lead + (lang === "my" ? "Penghantaran contoh: " : "示例配送费：") + m[1] + trail;
     m = text.match(/^(\d+) (Coral grouper|Sea bass|Red snapper) added to your preview bag\.$/);
     if (m) return lead + (lang === "my" ? m[1] + " " + literal(m[2], lang) + " dimasukkan ke bakul pratonton anda." : "已将 " + m[1] + " 件" + literal(m[2], lang) + "加入预览购物袋。") + trail;
+    m = text.match(/^(\d+) (.+) \((Small pack|Medium pack|Large pack|Small|Medium|Large|500 g pack|1 kg pack)\) added to your preview bag\.$/);
+    if (m && productNames.indexOf(m[2]) >= 0) return lead + (lang === "my" ? m[1] + " " + literal(m[2], lang) + " (" + literal(m[3], lang) + ") dimasukkan ke bakul pratonton anda." : "已将 " + m[1] + " 件" + literal(m[2], lang) + "（" + literal(m[3], lang) + "）加入预览购物袋。") + trail;
     m = text.match(/^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), (\d{1,2}) (January|February|March|April|May|June|July|August|September|October|November|December) (\d{4})( \(example\))?$/);
     if (m) return lead + (lang === "my" ? days[m[1]][0] + ", " + m[2] + " " + months[m[3]][0] + " " + m[4] + (m[5] ? " (contoh)" : "") : m[4] + "年" + months[m[3]][1] + "月" + m[2] + "日（" + days[m[1]][1] + (m[5] ? "，示例" : "") + "）") + trail;
     return value;
   }
   function titleCaseFish(fish) { return fish.charAt(0).toUpperCase() + fish.slice(1).toLowerCase(); }
 
+  function translateBusinessSamples(root, lang) {
+    if (!root.querySelector || !root.querySelector("#business-sample-fill")) return;
+    Object.keys(businessSampleFields).forEach(function (id) {
+      var field = root.querySelector("#" + id);
+      var state = field && sourceSampleValues.get(field);
+      if (!state) return;
+      if (field.value !== state.last) { sourceSampleValues.delete(field); return; }
+      var translated = translateValue(state.original, lang);
+      if (field.value !== translated) field.value = translated;
+      state.last = translated;
+    });
+    if (sampleListenerRoots.has(root)) return;
+    root.addEventListener("click", function (event) {
+      if (!event.target.closest || !event.target.closest("#business-sample-fill")) return;
+      // The button's handler fills the fields before this bubbling listener runs.
+      Object.keys(businessSampleFields).forEach(function (id) {
+        var field = root.querySelector("#" + id), original = businessSampleFields[id];
+        if (!field || field.value !== original) return;
+        var state = { original: original, last: original };
+        sourceSampleValues.set(field, state);
+        var translated = translateValue(original, current());
+        if (field.value !== translated) field.value = translated;
+        state.last = translated;
+      });
+    });
+    root.addEventListener("input", function (event) {
+      if (sourceSampleValues.has(event.target)) sourceSampleValues.delete(event.target);
+    });
+    sampleListenerRoots.add(root);
+  }
+
   function translate(root, lang) {
     if (!root) return;
     lang = normalize(lang || current());
     document.documentElement.lang = languages[lang];
-    // The static story page has its own SEO title and description.
+    // Standalone pages keep their own SEO title and description.
     if (root.id === "app" || (root.querySelector && root.querySelector("#app"))) {
       document.title = pageMetadata[lang][0];
       var description = document.querySelector('meta[name="description"]');
@@ -463,6 +736,7 @@
         }
       }
     });
+    translateBusinessSamples(root, lang);
     // app.js also updates badges, toast messages and aria labels without a full
     // render. Watch the small storefront subtree so those changes stay localised.
     if (root.nodeType === Node.ELEMENT_NODE && typeof MutationObserver !== "undefined") {
