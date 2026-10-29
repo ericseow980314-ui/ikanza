@@ -46,7 +46,7 @@
     "Your bag": ["Troli anda", "购物车"],
     "Contact details at launch": ["Butiran hubungan semasa pelancaran", "开业时公布联系方式"],
     "© Ikanza. Preview storefront; no orders or payments.": ["© Ikanza. Kedai contoh; tiada pesanan atau bayaran.", "© Ikanza。店铺展示；目前无法下单或付款。"],
-    "Listings and AI-generated imagery are illustrative.": ["Senarai produk dan imej janaan AI adalah untuk ilustrasi.", "商品信息及 AI 生成图片仅供示意。"],
+    "Example prices and AI-generated product images are illustrative.": ["Harga contoh dan imej produk janaan AI hanyalah untuk ilustrasi.", "示例价格及 AI 生成的商品图片仅供示意。"],
     "Preview listing": ["Produk contoh", "商品示例"],
     "Sample price": ["Harga contoh", "参考价格"],
     "Whole fish example": ["Contoh ikan seekor", "整鱼示例"],
@@ -65,11 +65,12 @@
 
     "From Semporna to your table": ["Dari Semporna ke meja anda", "从仙本那到您的餐桌"],
     "Semporna seafood, made simple.": ["Makanan laut Semporna, lebih mudah dipilih.", "仙本那海鲜，挑选更轻松。"],
-    "Ikanza is exploring a fish-first storefront shaped by a Semporna partner who buys wild-caught fish from small local fishers. The catalogue here uses market-based examples; the partner’s actual fish list, prices and delivery arrangements are not confirmed. Orders are not open yet.": ["Ikanza sedang meneroka kedai yang mengutamakan ikan bersama rakan di Semporna yang membeli ikan tangkapan liar daripada nelayan kecil tempatan. Semua produk di sini ialah contoh berdasarkan pasaran; senarai ikan, harga dan penghantaran sebenar daripada rakan kami belum disahkan. Pesanan belum dibuka.", "Ikanza 正与仙本那的合作伙伴探索以鱼类为主的网店；合作伙伴向当地小规模渔民收购野生捕捞的鱼。这里的商品仅为市场参考示例；实际鱼类清单、价格和送货安排尚待确认。目前未开放下单。"],
-    "Explore familiar fish, compare pack weights and see a sample delivered total. Ikanza is shaping a fish-first shop for Peninsular Malaysia while the real catch list and delivery route are confirmed.": ["Lihat pilihan ikan yang dikenali ramai, bandingkan berat pek dan semak contoh jumlah termasuk penghantaran. Ikanza sedang merancang kedai yang mengutamakan ikan untuk Semenanjung Malaysia sementara senarai tangkapan sebenar dan laluan penghantaran disahkan.", "先看看熟悉的鱼类，比较包装重量和含运费的示例总额。Ikanza 正筹备面向马来西亚半岛、以鱼类为主的网店；实际渔获清单和送货路线仍待确认。"],
+    "Our Semporna partner has shared the fish names for this preview. Market-based pack prices and delivery totals are examples; current stock, sale sizes and Ikanza prices are not yet confirmed. Orders are not open.": ["Rakan kami di Semporna sudah berkongsi senarai nama ikan untuk kedai contoh ini. Harga pek dan jumlah termasuk penghantaran di sini hanyalah contoh berdasarkan pasaran; stok semasa, saiz jualan dan harga Ikanza belum disahkan. Pesanan belum dibuka.", "仙本那合作伙伴已提供这间示例店铺的鱼类名单。包装价格及含运费总额仅为市场参考示例；现货、正式销售规格和 Ikanza 价格尚未确认。目前未开放下单。"],
+    "Our Semporna partner has shared the fish range. Explore it here, then try the example shop while sale sizes, current stock, prices and delivery are prepared.": ["Rakan kami di Semporna sudah berkongsi senarai ikan. Kenali pilihan tersebut di sini, kemudian cuba kedai contoh sementara saiz jualan, stok semasa, harga dan penghantaran disediakan.", "仙本那合作伙伴已提供鱼类名单。您可以先看看这些鱼，再试用示例店铺；正式销售规格、现货、价格和送货安排仍在筹备。"],
     "Storefront preview · Orders are not open": ["Kedai contoh · Belum menerima pesanan", "店铺展示中 · 暂未开放下单"],
     "Find something for the table.": ["Cari pilihan untuk hidangan anda.", "找找适合上桌的海鲜。"],
-    "Start with grouper for steaming, snapper for a shared dinner or tenggiri for curry. Compare the example pack and guide price as you browse.": ["Cuba lihat kerapu untuk dikukus, ikan merah untuk hidangan bersama atau tenggiri untuk kari. Bandingkan pek contoh dan harga panduan semasa melihat-lihat.", "想清蒸石斑鱼、准备红鲷鱼晚餐，或煮咖喱马鲛鱼？浏览时可比较示例包装和参考价格。"],
+    "The partner has shared fish names, including grouper, tuna and tenggiri. Exact sale details and current availability will be checked before orders open.": ["Rakan kami sudah berkongsi nama ikan, termasuk kerapu, tuna dan tenggiri. Butiran jualan dan stok semasa akan disahkan sebelum pesanan dibuka.", "合作伙伴已提供鱼类名称，包括石斑鱼、金枪鱼和马鲛鱼。正式销售详情及现货情况会在开放下单前确认。"],
+    "Try pack sizes, guide prices and a sample delivery total. These are market examples, separate from the partner fish list.": ["Cuba pilihan berat pek, harga panduan dan contoh jumlah termasuk penghantaran. Ini hanyalah contoh pasaran, berasingan daripada senarai ikan rakan kami.", "试用包装规格、参考价格和含运费的示例总额。这些是市场参考商品，与合作伙伴的鱼类名单分开。"],
     "Pick your next dinner.": ["Cari idea untuk makan malam.", "看看下一顿吃什么。"],
     "Browse the sample catalogue and try the bag and checkout preview. Orders are not open yet.": ["Lihat produk contoh dan cuba troli serta halaman semak pesanan. Ikanza belum menerima pesanan.", "看看示例商品，试用购物车和订单核对页面。目前还不能下单。"],
     "Good seafood.": ["Makanan laut Semporna.", "仙本那海鲜。"],
@@ -114,7 +115,34 @@
 
     "The collection": ["Pilihan makanan laut", "海鲜商品"],
     "Find your seafood.": ["Cari makanan laut", "找海鲜"],
-    "Browse by English or Malay name and compare guide prices. Fish lead this preview; prawns, squid and crab show possible future categories. None is confirmed supplier stock.": ["Cari mengikut nama Inggeris atau Melayu dan bandingkan harga panduan. Ikan menjadi tumpuan contoh kedai ini; udang, sotong dan ketam menunjukkan kategori yang mungkin ditawarkan kelak. Tiada satu pun stok pembekal yang disahkan.", "可按英文或马来文名称浏览，并比较参考价格。此店铺示例以鱼类为主；虾、苏东和螃蟹展示未来可能加入的类别。所有商品都不是已确认的供应商库存。"],
+    "Explore fish names supplied by our Semporna partner, then try market-based example packs and prices. Current stock, sale sizes, prices and delivery are still to be confirmed.": ["Lihat senarai nama ikan daripada rakan kami di Semporna, kemudian cuba pek dan harga contoh berdasarkan pasaran. Stok semasa, saiz jualan, harga dan penghantaran masih perlu disahkan.", "先看看仙本那合作伙伴提供的鱼类名单，再试用参考市场资料设定的包装和价格。现货、正式销售规格、价格和送货安排仍待确认。"],
+    "From our Semporna partner": ["Daripada rakan kami di Semporna", "来自仙本那合作伙伴"],
+    "Fish in the partner lineup.": ["Senarai ikan rakan kami.", "合作伙伴的鱼类名单。"],
+    "See the full partner fish list": ["Lihat senarai penuh ikan rakan kami", "查看完整鱼类名单"],
+    "Partner fish list": ["Senarai ikan rakan kami", "合作伙伴鱼类名单"],
+    "These are fish names supplied by the partner. Some trade names and catch methods still need checking. Sale sizes, condition, current availability, prices and delivery will be shown before orders open.": ["Nama ikan ini diberikan oleh rakan kami. Beberapa nama dagangan dan cara tangkapan masih perlu disemak. Saiz jualan, keadaan ikan, stok semasa, harga dan penghantaran akan dinyatakan sebelum pesanan dibuka.", "这些鱼名由合作伙伴提供。部分商品名称及捕捞方式仍需核对。正式销售规格、鱼的状态、现货、价格和配送安排会在开放下单前列明。"],
+    "Not available to order yet · sale details to follow": ["Belum boleh dipesan · butiran jualan akan diumumkan", "暂不能下单 · 销售详情稍后公布"],
+    "Source and sale details to confirm": ["Sumber dan butiran jualan perlu disahkan", "来源和销售详情待确认"],
+    "Exact species name to confirm": ["Nama spesies tepat perlu disahkan", "准确鱼种名称待确认"],
+    "Poster calls this barracuda; exact name to confirm": ["Poster menyebutnya barracuda; nama tepat perlu disahkan", "海报称它为梭鱼；准确名称待确认"],
+    "Poster calls this spotted grouper; exact species to confirm": ["Poster menyebutnya spotted grouper; spesies tepat perlu disahkan", "海报称它为斑点石斑鱼；准确鱼种待确认"],
+    "English and Chinese names to reconcile": ["Nama Inggeris dan Cina perlu diselaraskan", "英文与中文名称需要核对"],
+    "Catch method to confirm": ["Cara tangkapan perlu disahkan", "捕捞或养殖方式待确认"],
+    "Chinese name and overlap to confirm": ["Nama Cina dan pertindihan dengan satu lagi entri perlu disahkan", "中文名称及是否与另一项重复仍待确认"],
+    "Try the shopping flow": ["Cuba cara membeli-belah", "试用购物流程"],
+    "Market-based examples.": ["Produk contoh berdasarkan pasaran.", "市场参考商品。"],
+    "These 25 priced examples let you try pack selection, search, bag and checkout. They are not a current Ikanza stock list or sale offer.": ["25 produk dengan harga contoh ini membolehkan anda mencuba pilihan pek, carian, troli dan semakan pesanan. Ini bukan senarai stok semasa atau tawaran jualan Ikanza.", "这 25 件标有参考价格的商品，可让您试用包装选择、搜索、购物车和订单核对。它们不是 Ikanza 的现货清单或正式销售报价。"],
+    "From the water": ["Dari laut", "来自海上"],
+    "A glimpse of the catch.": ["Lihat suasana di laut.", "看看海上的作业。"],
+    "These short clips were shared by our Semporna partner. They show fish being brought aboard and sorted; they are not a live view of today’s stock.": ["Klip ringkas ini dikongsi oleh rakan kami di Semporna. Anda dapat melihat ikan dinaikkan ke bot dan diasingkan; ini bukan paparan langsung stok hari ini.", "这些短片由仙本那合作伙伴分享，记录了鱼获上船及分拣的过程；画面不代表今天的现货。"],
+    "Fish trap lifted at sea": ["Bubu ikan diangkat dari laut", "海上提起鱼笼"],
+    "Second fish trap lifted beside a boat": ["Bubu ikan kedua diangkat di sisi bot", "渔船旁提起第二个鱼笼"],
+    "Crew sorting fish on a deck": ["Pekerja mengasingkan ikan di atas dek", "船员在甲板上分拣鱼获"],
+    "Fish trap lifted beside a boat": ["Bubu ikan diangkat di sisi bot", "渔船旁提起鱼笼"],
+    "A second catch brought aboard": ["Tangkapan kedua dinaikkan ke bot", "第二批鱼获上船"],
+    "Sorting fish after the catch": ["Mengasingkan ikan selepas tangkapan", "捕捞后分拣鱼获"],
+    "Footage is from the partner, not a promise of current availability, a specific species or a delivery date.": ["Rakaman ini daripada rakan kami, bukan jaminan stok semasa, spesies tertentu atau tarikh penghantaran.", "短片由合作伙伴提供，并不代表现货、特定鱼种或送货日期已经确定。"],
+    "Video unavailable in this browser.": ["Video tidak dapat dimainkan dalam pelayar ini.", "此浏览器无法播放视频。"],
     "Search fish, prawns, squid or crab": ["Cari ikan, udang, sotong atau ketam", "搜索鱼、虾、苏东或螃蟹"],
     "Seafood, without the guesswork.": ["Makanan laut dengan maklumat yang jelas.", "选购海鲜，心中有数。"],
     "Search preview products": ["Cari produk contoh", "搜索示例商品"],
@@ -126,7 +154,7 @@
     "Not found": ["Tidak ditemui", "未找到"],
     "Guide price from": ["Harga panduan dari", "参考价起"],
     "Choose pack": ["Pilih pek", "选择规格"],
-    "Preview item · Not for sale yet": ["Produk contoh · Belum dijual", "示例商品 · 尚未开售"],
+    "Market example · Not for sale yet": ["Contoh pasaran · Belum dijual", "市场示例 · 尚未开售"],
     "Add to preview bag": ["Tambah ke troli contoh", "加入示例购物车"],
     "Market-based guide only. Final Ikanza stock, preparation, condition and price are unconfirmed. No order or payment is available.": ["Harga panduan ini berdasarkan pasaran. Stok, cara penyediaan, keadaan produk dan harga Ikanza belum disahkan. Belum boleh membuat pesanan atau bayaran.", "价格仅供参考。Ikanza 的库存、处理方式、商品状态和实际价格尚未确认；目前不能下单或付款。"],
     "Market price reference:": ["Rujukan harga pasaran:", "市场价格参考："],
@@ -169,6 +197,7 @@
     "Subtotal": ["Jumlah kecil", "商品小计"],
     "Continue to checkout preview": ["Semak pesanan contoh", "查看示例订单"],
     "Orders and payments are not open yet.": ["Belum boleh membuat pesanan atau bayaran.", "目前不能下单或付款。"],
+    "Market example": ["Contoh pasaran", "市场示例"],
     "Preview item": ["Produk contoh", "示例商品"],
     "Remove": ["Keluarkan", "移除"],
 
@@ -243,8 +272,8 @@
     "Where it began": ["Di mana ia bermula", "故事的起点"],
     "Closer to the source. Clearer at the table.": ["Kenali sumber ikan, semak butiran sebelum membeli.", "了解来源，买前看清详情。"],
     "Our Semporna partner buys wild-caught fish from small local fishers and sells it beyond the area. That local network is the starting point for Ikanza.": ["Rakan kami di Semporna membeli ikan tangkapan liar daripada nelayan kecil tempatan dan menjualnya ke luar kawasan. Rangkaian setempat itu menjadi titik mula Ikanza.", "仙本那的合作伙伴向当地小规模渔民收购野生捕捞的鱼，再销往外地。这个本地采购网络是 Ikanza 的起点。"],
-    "We want families in Peninsular Malaysia to know exactly which fish is offered, its weight and condition, the price and the delivery plan before ordering. The partner has not confirmed a sale catalogue for this site yet.": ["Kami mahu keluarga di Semenanjung Malaysia tahu jenis ikan yang ditawarkan, berat dan keadaannya, harga serta rancangan penghantaran sebelum membuat pesanan. Rakan kami belum mengesahkan senarai produk untuk dijual di laman ini.", "我们希望马来西亚半岛的家庭在下单前看清实际供应的鱼种、重量与状态、价格和送货安排。合作伙伴尚未确认本网站的销售清单。"],
-    "Our first focus is fish for households in Peninsular Malaysia. Other seafood categories in this preview show how the shop could work; they are not confirmed supplier products.": ["Tumpuan awal kami ialah ikan untuk keluarga di Semenanjung Malaysia. Kategori makanan laut lain dalam contoh ini hanya menunjukkan cara kedai mungkin berfungsi; produk itu belum disahkan oleh pembekal.", "我们首先面向马来西亚半岛的家庭销售鱼类。页面中的其他海鲜类别只用于展示店铺可能如何运作，尚非供应商确认的商品。"],
+    "Our partner has shared the fish range shown in the shop. Before any order opens, each sale listing still needs the exact species name where unclear, current availability, weight, condition, price and delivery plan.": ["Rakan kami sudah berkongsi senarai ikan yang dipaparkan di kedai ini. Sebelum menerima pesanan, setiap produk sebenar perlu mempunyai nama spesies yang tepat jika masih kabur, stok semasa, berat, keadaan ikan, harga dan rancangan penghantaran.", "合作伙伴已提供店铺中展示的鱼类名单。开放下单前，每件正式商品仍需核实名称不明确的鱼种、现货、重量、状态、价格及送货安排。"],
+    "Our first focus is fish for households in Peninsular Malaysia. The priced fish and other seafood cards are market-based examples for trying the shop; they are not confirmed supplier stock.": ["Tumpuan awal kami ialah ikan untuk keluarga di Semenanjung Malaysia. Kad ikan dan makanan laut lain yang menunjukkan harga ialah contoh berdasarkan pasaran untuk mencuba kedai, bukan stok pembekal yang disahkan.", "我们首先面向马来西亚半岛的家庭提供鱼类。标有价格的鱼及其他海鲜卡片只是供试用店铺的市场参考示例，不代表合作伙伴已确认的库存。"],
     "What we are building toward": ["Matlamat yang sedang kami usahakan", "我们正在努力实现"],
     "Seafood shopping with fewer surprises.": ["Pilih ikan dengan lebih yakin.", "看清详情，放心挑鱼。"],
     "Know the fish": ["Kenali ikan", "了解鱼"],
@@ -255,7 +284,7 @@
     "Straight answers on handling, timing and help when something goes wrong.": ["Jawapan yang terus terang tentang pengendalian, masa penghantaran dan bantuan jika timbul masalah.", "清楚说明处理方式、配送时间，以及出现问题时如何获得帮助。"],
     "Come see what we are building": ["Lihat kedai contoh", "看看店铺示例"],
     "From Semporna, with care.": ["Kedai Ikanza sedang disiapkan.", "Ikanza 店铺正在筹备。"],
-    "Explore the storefront while the fish list and delivery arrangements are being confirmed. Ikanza is not yet taking orders; current listings, prices and checkout are illustrative.": ["Lihat kedai contoh sementara senarai ikan dan aturan penghantaran disahkan. Ikanza belum menerima pesanan; produk, harga dan halaman semak pesanan di sini hanyalah contoh.", "鱼类清单和送货安排仍待确认，欢迎先看看店铺。Ikanza 暂未接单；当前商品、价格和订单核对页仅作示例。"],
+    "Explore the partner fish list and the sample shop while current stock, prices and delivery arrangements are prepared. Ikanza is not yet taking orders.": ["Lihat senarai ikan rakan kami dan cuba kedai contoh sementara stok semasa, harga dan penghantaran disediakan. Ikanza belum menerima pesanan.", "现货、价格和送货安排仍在筹备；您可先看看合作伙伴的鱼类名单，并试用示例店铺。Ikanza 目前尚未接单。"],
     "Seafood should feel easy to choose, order and enjoy.": ["Memilih, memesan dan menikmati makanan laut sepatutnya mudah.", "挑选、订购和享用海鲜，本该轻松简单。"],
     "The idea": ["Idea Ikanza", "Ikanza 的想法"],
     "Our starting point is simple: make it easier for households to understand the fish they are choosing and the full cost of getting it home.": ["Titik permulaan kami mudah: memudahkan isi rumah memahami ikan yang dipilih dan jumlah kos untuk menghantarnya ke rumah.", "我们的出发点很简单：让家庭更容易了解所选的鱼，以及送货到家的全部费用。"],
@@ -270,10 +299,10 @@
     "Delivery dates are not confirmed yet. The dates shown in checkout are examples; actual estimates and order cutoffs will be shown before payment is enabled.": ["Tarikh penghantaran belum disahkan. Tarikh yang dipaparkan hanyalah contoh. Anggaran ketibaan dan waktu akhir pesanan sebenar akan diumumkan sebelum pembayaran dibuka.", "送货日期尚未确认。页面上的日期仅作示例；实际预计送达时间和截单时间会在开放付款前公布。"],
     "Will the fish be chilled or frozen?": ["Adakah ikan disejukkan atau dibekukan?", "鱼是冷藏还是冷冻的？"],
     "The product condition and packing method have not been confirmed. Each live listing will state these details clearly.": ["Keadaan ikan dan cara pembungkusan belum disahkan. Butiran ini akan dinyatakan pada produk sebenar.", "鱼的状态和包装方式尚未确认。正式商品页面会列明这些详情。"],
-    "Are these the Semporna partner’s actual products?": ["Adakah ini produk sebenar daripada rakan di Semporna?", "这些是仙本那合作伙伴的实际商品吗？"],
-    "Not yet. The images, species, pack sizes and prices are illustrative. We will list real products only after the partner confirms the fish, source, condition, size, price and availability.": ["Belum. Imej, jenis ikan, saiz pek dan harga hanyalah contoh. Produk sebenar hanya akan disenaraikan selepas rakan kami mengesahkan jenis ikan, sumber, keadaan, saiz, harga dan ketersediaannya.", "还不是。图片、鱼种、包装规格和价格仅作示例。合作伙伴确认鱼种、来源、状态、规格、价格和供应情况后，我们才会列出实际商品。"],
+    "Are these the Semporna partner’s actual fish?": ["Adakah ini ikan daripada rakan di Semporna?", "这些是仙本那合作伙伴提供的鱼吗？"],
+    "The partner fish list shows names supplied by our Semporna partner. The priced cards below it are market examples for trying the site. Some trade names need final species checks; current stock, pack sizes, condition and Ikanza prices are still to come.": ["Senarai ikan rakan kami memaparkan nama yang diberikan oleh pembekal di Semporna. Kad berharga di bawahnya ialah contoh pasaran untuk mencuba laman ini. Beberapa nama dagangan masih perlu disemak; stok semasa, saiz pek, keadaan ikan dan harga Ikanza belum diumumkan.", "合作伙伴鱼类名单展示的是仙本那伙伴提供的名称。下方标价卡片是供试用网站的市场示例。部分商品名称仍需核对鱼种；现货、包装规格、鱼的状态和 Ikanza 价格尚未公布。"],
     "Will every fish be available each week?": ["Adakah semua jenis ikan tersedia setiap minggu?", "每种鱼每周都会有货吗？"],
-    "Wild-caught supply can change. Live listings will need current availability and pack details confirmed before a customer orders.": ["Bekalan ikan tangkapan liar boleh berubah. Sebelum pelanggan membuat pesanan, senarai produk sebenar perlu menyatakan bekalan semasa dan butiran pek yang telah disahkan.", "野生捕捞鱼类的供应会变化。顾客下单前，正式商品页面须确认当前库存和包装详情。"],
+    "Availability can change. Live listings will need current stock and pack details confirmed before a customer orders.": ["Stok boleh berubah. Sebelum pelanggan membuat pesanan, produk sebenar perlu menyatakan stok semasa dan butiran pek yang disahkan.", "现货可能变化。顾客下单前，正式商品页面须列明已确认的库存和包装详情。"],
     "What if there is a problem with an order?": ["Bagaimana jika ada masalah dengan pesanan?", "如果订单出现问题怎么办？"],
     "We will publish contact details and a clear process for missing, damaged or incorrect seafood before taking orders. There are no real purchases or refunds through this preview.": ["Kami akan menerbitkan butiran hubungan serta proses yang jelas untuk makanan laut yang hilang, rosak atau tersalah hantar sebelum menerima pesanan. Tiada pembelian atau bayaran balik sebenar melalui pratonton ini.", "接单前，我们会公布联系方式及处理漏发、损坏或错发海鲜的明确流程。此预览不涉及真实购买或退款。"],
     "Can I pay here?": ["Bolehkah saya membayar di sini?", "可以在这里付款吗？"],
@@ -366,7 +395,7 @@
     "Preview only. No business enquiry is sent from this page.": ["Borang contoh sahaja. Tiada pertanyaan dihantar daripada halaman ini.", "表单仅作示例。此页面不会发送咨询。"],
     "From Semporna": ["Dari Semporna", "来自仙本那"],
     "to more menus": ["ke lebih banyak menu", "走进更多菜单"],
-    "Illustrative imagery; no supplier product list is confirmed.": ["Imej hanya ilustrasi; senarai produk pembekal belum disahkan.", "图片仅供示意；供应商商品清单尚未确认。"],
+    "Illustrative imagery; fish names shared, sale details pending.": ["Imej hanya ilustrasi; nama ikan telah dikongsi, butiran jualan belum disahkan.", "图片仅供示意；鱼名已提供，销售详情仍待确认。"],
     "A better sourcing conversation": ["Berbincang tentang bekalan", "谈谈采购需求"],
     "Good decisions start with good details.": ["Semak butiran sebelum membuat keputusan.", "决定前，先把细节问清楚。"],
     "Every kitchen has its own needs. We are shaping a wholesale experience around the questions that matter before a buyer commits.": ["Setiap dapur memerlukan jenis ikan, kuantiti dan jadual yang berbeza. Borang contoh ini menunjukkan maklumat yang boleh dibincangkan apabila pertanyaan dibuka.", "每个厨房需要的鱼种、数量和订购时间都不同。这个示例表单列出正式开放咨询后可以讨论的细节。"],
@@ -378,7 +407,7 @@
     "Coverage, handling, timing and support will be explained when the delivery arrangements are ready.": ["Kawasan liputan, pengendalian, masa penghantaran dan bantuan akan diterangkan setelah aturan penghantaran disahkan.", "送货安排确认后，我们会说明地区、处理方式、时间和售后支持。"],
     "Wholesale enquiry preview": ["Borang pertanyaan borong contoh", "批发咨询表单示例"],
     "What could Ikanza bring to your menu?": ["Apa yang dapur anda perlukan?", "您的厨房需要什么？"],
-    "Show us the shape of your kitchen’s needs. This preview demonstrates the future enquiry flow while the fish list, supply, pricing and delivery route are being confirmed.": ["Nyatakan keperluan dapur anda di bawah. Borang ini menunjukkan contoh aliran pertanyaan sementara senarai ikan, bekalan, harga dan laluan penghantaran disahkan.", "欢迎在下方填写厨房的采购需求示例。鱼类清单、供应、价格和送货路线仍待确认；此表单只展示未来的咨询流程。"],
+    "Show us the shape of your kitchen’s needs. The Semporna partner has shared a fish range; wholesale pack sizes, current supply, pricing and delivery are still being worked out.": ["Nyatakan keperluan dapur anda di bawah. Rakan kami di Semporna sudah berkongsi senarai ikan; saiz pek borong, bekalan semasa, harga dan penghantaran masih disediakan.", "欢迎在下方填写厨房的采购需求示例。仙本那合作伙伴已提供鱼类名单；批发包装规格、现货、价格和配送安排仍在筹备。"],
     "Describe your needs.": ["Terangkan keperluan anda.", "描述您的需求。"],
     "Choose the type of business, area, seafood interest and expected volume.": ["Pilih jenis perniagaan, kawasan, makanan laut yang diminati dan anggaran kuantiti.", "选择企业类型、所在地区、感兴趣的海鲜及预计采购量。"],
     "See a sample confirmation.": ["Lihat pengesahan contoh.", "查看示例确认。"],
@@ -388,7 +417,7 @@
     "Current wholesale status": ["Status borong semasa", "当前批发业务状态"],
     "Opening later": ["Akan dibuka kemudian", "稍后开放"],
     "Where things stand": ["Keadaan semasa", "目前进展"],
-    "No wholesale catalogue, stock, prices or delivery schedule is confirmed yet. There is no way to send an enquiry through this preview.": ["Senarai borong, stok, harga dan jadual penghantaran belum disahkan. Borang ini belum boleh menghantar pertanyaan.", "批发商品、库存、价格和送货时间表尚未确认。此表单目前无法发送咨询。"],
+    "Fish names have been shared, but wholesale stock, pack sizes, prices and delivery schedule are not confirmed yet. There is no way to send an enquiry through this preview.": ["Nama ikan sudah dikongsi, tetapi stok borong, saiz pek, harga dan jadual penghantaran belum disahkan. Borang contoh ini belum boleh menghantar pertanyaan.", "鱼名已提供，但批发现货、包装规格、价格及送货时间表仍待确认。此示例表单目前无法发送咨询。"],
     "Try the experience": ["Cuba borang contoh", "试用示例表单"],
     "Your wholesale brief": ["Keperluan borong anda", "您的批发采购需求"],
     "Preview only:": ["Borang contoh:", "示例表单："],
@@ -443,6 +472,23 @@
     "Flower crab": ["Ketam bunga", "花蟹"],
     "Golden pomfret": ["Ikan bawal emas", "金鲳鱼"],
     "Spanish mackerel": ["Ikan tenggiri", "马鲛鱼"],
+    "Giant grouper": ["Kerapu gergasi", "龙趸"],
+    "Su Mei (humphead wrasse)": ["Su Mei (ikan Napoleon)", "苏眉（曲纹唇鱼）"],
+    "Seven Star Grouper": ["Kerapu tujuh bintang", "七星斑"],
+    "Pualu / reef fish": ["Pualu / ikan karang", "浦鱼（海报名称）"],
+    "Shun He": ["Shun He", "顺鹤（海报名称）"],
+    "Mouse grouper": ["Kerapu tikus", "老鼠斑"],
+    "Red grouper": ["Kerapu merah", "红斑鱼"],
+    "Golden snapper": ["Golden snapper (nama pada poster)", "Golden snapper（海报英文名）"],
+    "Wild red snapper": ["Ikan merah liar", "野生红鲷"],
+    "Dragon grouper": ["Dragon grouper", "龙虎斑"],
+    "Yellowfin tuna": ["Tuna sirip kuning", "黄鳍金枪鱼"],
+    "Barracuda": ["Ikan alu-alu", "Barracuda（海报英文名）"],
+    "Mackerel": ["Mackerel", "鲭鱼"],
+    "Poster: 金目鲷": ["Poster: 金目鲷", "海报名称：金目鲷"],
+    "Poster: 立鱼": ["Poster: 立鱼", "海报名称：立鱼"],
+    "马鲛鱼 · Ikan tenggiri": ["Ikan tenggiri · 马鲛鱼", "马鲛鱼 · Ikan tenggiri"],
+    "海鲈鱼 · Siakap": ["Siakap · 海鲈鱼", "海鲈鱼 · Siakap"],
     "Fourfinger threadfin": ["Ikan senangin", "午鱼"],
     "Torpedo scad": ["Ikan cencaru", "硬尾鱼"],
     "Sardine": ["Ikan sardin", "沙丁鱼"],
@@ -575,10 +621,10 @@
     "1 kg": ["1 kg", "1 公斤"],
     "Example market prices.": ["Harga pasaran contoh.", "市场参考价格。"],
     "Guide prices checked against Malaysian shops on 29 October 2026.": ["Harga panduan dibandingkan dengan kedai di Malaysia pada 29 Oktober 2026.", "参考价格于 2026 年 10 月 29 日对照马来西亚商店资料。"],
-    "See the market listing on each product page, or browse": ["Lihat pautan penjual pada setiap halaman produk, atau semak", "可查看各商品页面的商家链接，也可浏览"],
+    "See the market listing on each example product page, or browse": ["Lihat pautan penjual pada setiap halaman produk contoh, atau semak", "可查看各示例商品页面的商家链接，也可浏览"],
     "PasarHub seafood": ["makanan laut PasarHub", "PasarHub 海鲜"],
     "MySeafoodMart shellfish": ["kerang-kerangan MySeafoodMart", "MySeafoodMart 贝类"],
-    ". Some pack weights and prices are estimates. The Semporna partner has not confirmed a sale catalogue, stock, preparation, condition, delivery or Ikanza prices.": [". Sebahagian berat pek dan harga ialah anggaran. Rakan di Semporna belum mengesahkan senarai produk untuk dijual, stok, cara penyediaan, keadaan ikan, penghantaran atau harga Ikanza.", "。部分包装重量和价格为估算。仙本那合作伙伴尚未确认销售清单、库存、处理方式、鱼的状态、送货安排或 Ikanza 价格。"],
+    ". Some pack weights and prices are estimates. Our partner has supplied fish names, but current stock, sale sizes, condition, delivery and Ikanza prices are not confirmed.": [". Sebahagian berat pek dan harga ialah anggaran. Rakan kami sudah berkongsi nama ikan, tetapi stok semasa, saiz jualan, keadaan ikan, penghantaran dan harga Ikanza belum disahkan.", "。部分包装重量和价格为估算。合作伙伴已提供鱼名，但现货、正式销售规格、鱼的状态、送货安排和 Ikanza 价格仍待确认。"],
     "Example market prices, checked 29 October 2026.": ["Harga pasaran contoh, disemak pada 29 Oktober 2026.", "市场参考价格，查阅日期：2026 年 10 月 29 日。"],
     "References:": ["Rujukan:", "参考来源："],
     "PasarHub fish": ["ikan di PasarHub", "PasarHub 鱼类"],
@@ -629,7 +675,7 @@
     "What if the fish weighs differently?": ["Bagaimana jika berat ikan berbeza?", "如果鱼的重量不同怎么办？"],
     "The gram ranges and prices here are illustrations. Confirmed listings will explain weighing and final pricing before any real checkout opens.": ["Julat berat dan harga di sini hanya contoh. Cara penimbangan dan harga akhir akan diterangkan sebelum pembelian sebenar dibuka.", "这里的重量范围和价格仅作示例。正式开放购买前，我们会说明称重方式和最终价格。"],
     "Is this part of the Semporna catch?": ["Adakah ini daripada tangkapan ikan di Semporna?", "这属于仙本那的渔获吗？"],
-    "No sale list or product photos from the Semporna partner are confirmed yet. This market-based example does not establish origin, availability or handling.": ["Senarai produk untuk dijual dan foto sebenar daripada rakan Semporna belum disahkan. Contoh berdasarkan pasaran ini tidak membuktikan asal, ketersediaan atau cara pengendaliannya.", "仙本那合作伙伴尚未确认销售清单或实物照片。这个市场参考示例不能证明产地、供应情况或处理方式。"],
+    "This priced card is a market example, separate from the partner fish list. It does not establish current origin, stock, weight or handling for an Ikanza order.": ["Kad berharga ini ialah contoh pasaran, berasingan daripada senarai ikan rakan kami. Ia tidak membuktikan asal, stok semasa, berat atau cara pengendalian bagi pesanan Ikanza.", "这张标价卡片是市场参考示例，与合作伙伴鱼类名单分开。它不能证明 Ikanza 订单商品的实际来源、现货、重量或处理方式。"],
     "Review the example items, delivery area and full preview total before continuing.": ["Semak produk contoh, kawasan penghantaran dan jumlah termasuk caj sebelum meneruskan.", "继续前，请核对示例商品、送货地区和含运费的总额。"],
     "Example delivery area": ["Kawasan penghantaran contoh", "示例送货地区"],
     "Example discount": ["Diskaun contoh", "示例折扣"],
@@ -649,9 +695,9 @@
   };
 
   var pageMetadata = {
-    en: ["Ikanza | Semporna Fish Shop Preview", "Explore Ikanza’s fish-first shop preview, shaped by a Semporna partner who buys wild-caught fish from small local fishers. Products and delivery are unconfirmed; orders are not open."],
-    my: ["Ikanza | Kedai Ikan Semporna Contoh", "Lihat kedai contoh Ikanza yang mengutamakan ikan. Rakan kami di Semporna membeli ikan tangkapan liar daripada nelayan kecil tempatan. Produk dan penghantaran belum disahkan; pesanan belum dibuka."],
-    cn: ["Ikanza | 仙本那鱼类店铺示例", "看看 Ikanza 以鱼类为主的店铺示例。仙本那合作伙伴向当地小规模渔民收购野生捕捞的鱼；商品与送货安排仍待确认，暂未开放下单。"]
+    en: ["Ikanza | Semporna Fish Shop Preview", "Explore fish names shared by Ikanza’s Semporna partner and try a sample seafood shop. Current stock, prices and delivery are still to come; orders are not open."],
+    my: ["Ikanza | Kedai Ikan Semporna Contoh", "Lihat nama ikan yang dikongsi oleh rakan Ikanza di Semporna dan cuba kedai makanan laut contoh. Stok semasa, harga dan penghantaran belum diumumkan; pesanan belum dibuka."],
+    cn: ["Ikanza | 仙本那鱼类店铺示例", "看看 Ikanza 仙本那合作伙伴提供的鱼类名单，并试用海鲜店铺示例。现货、价格和送货安排尚未公布；目前未开放下单。"]
   };
 
   var days = {
@@ -696,8 +742,15 @@
     var result = literal(text, lang);
     if (result !== null) return lead + result + trail;
 
+    var m = text.match(/^(\d+) partner fish names? · (\d+) market examples?$/);
+    if (m) return lead + (lang === "my"
+      ? m[1] + " nama ikan rakan kami · " + m[2] + " produk contoh pasaran"
+      : "合作伙伴鱼名 " + m[1] + " 项 · 市场示例商品 " + m[2] + " 件") + trail;
+    m = text.match(/^(\d+) seconds$/);
+    if (m) return lead + (lang === "my" ? m[1] + " saat" : m[1] + " 秒") + trail;
+
     // A product's price line contains both a variable pack weight and a variable RM amount.
-    var m = text.match(/^Guide price for (.+) · approx\. (.+) \/ kg at midpoint weight$/);
+    m = text.match(/^Guide price for (.+) · approx\. (.+) \/ kg at midpoint weight$/);
     if (m) {
       var weight = literal(m[1], lang) || m[1];
       return lead + (lang === "my"
